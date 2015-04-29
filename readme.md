@@ -17,7 +17,7 @@ This guide details how to setup a Raspberry Pi emonBase base-station that can be
 
 ### Technical detail
 
-The bufferedwrite branch of emoncms is the result of development work into a version of emoncms that has a reduced disk write load with the view of enabling the use of SD cards for long term logging. Its early days yet to know whether this approach will succeed, however monitoring of disk activity shows that the write load on a busy system can be 30 to a several 100 times less with this modified version of emoncms.
+The low write branch of emoncms is the result of development work into a version of emoncms that has a reduced disk write load with the view of enabling the use of SD cards for long term logging. Its early days yet to know whether this approach will succeed, however monitoring of disk activity shows that the write load on a busy system can be 30 to a several 100 times less with this modified version of emoncms.
 
 [Full investigation into improving write performance with write buffering](https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/writeloadinvestigation.md)
 
