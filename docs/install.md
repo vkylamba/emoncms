@@ -1,8 +1,8 @@
-## How to setup a raspberrypi running emonhub + the bufferedwrite development branch of emoncms
+## How to setup a raspberrypi running emonhub + the low write branch of emoncms
 
 This guide details how to setup a raspberry pi basestation that can be used to either forward data to a remote server or record data locally or both. 
 
-It uses the bufferedwrite branch of emoncms which is part of the investigation and development work into a version of emoncms that has a reduced disk write load with the view of enabling the use of SD cards for long term logging. Its early days yet to know whether this approach will succeed, however monitoring of disk activity shows that the write load on a busy system can be several hundred times less with this modified version of emoncms.
+It uses the low write branch of emoncms which is part of the investigation and development work into a version of emoncms that has a reduced disk write load with the view of enabling the use of SD cards for long term logging. Its early days yet to know whether this approach will succeed, however monitoring of disk activity shows that the write load on a busy system can be several hundred times less with this modified version of emoncms.
 
 [Full investigation into improving write performance with write buffering](https://github.com/openenergymonitor/documentation/blob/master/BuildingBlocks/TimeSeries/writeloadinvestigation.md)
 
@@ -304,7 +304,7 @@ Cd into www directory
 
 Download emoncms using git:
 
-    $ git clone -b bufferedwrite https://github.com/emoncms/emoncms.git
+    $ git clone -b low-write https://github.com/emoncms/emoncms.git
     
 Once installed you can pull in updates with:
 
