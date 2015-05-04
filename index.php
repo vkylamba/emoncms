@@ -12,9 +12,8 @@
 
     */
     
-    $emoncms_version = "8.4.0, bufferedwrite:0.0.2";
+    $emoncms_version = "low-write-v8.5";
 
-    
     $ltime = microtime(true);
 
     define('EMONCMS_EXEC', 1);
