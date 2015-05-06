@@ -23,9 +23,4 @@
             <a href="<?php echo $path; ?>admin/db" class="btn btn-info"><?php echo _('Update & check'); ?></a>
         </td>
     </tr>
-    <tr>
-        <td>LOG4PHP INSTALLED: <?php if(LOG4PHP_INSTALLED) echo " yes"; else echo " no"; ?></td>
-        <td></td>
-        </tr>
-    <tr>
 </table>
