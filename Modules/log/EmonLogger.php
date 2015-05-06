@@ -32,6 +32,14 @@ class EmonLogger
     }
 
     public function info ($message){
+        if (!file_exists($this->logfile))
+        {
+            $fh = fopen($this->logfile,"a");
+            fclose($fh);
+            chgrp($this->logfile,"www-data");
+            chmod($this->logfile,0664);
+        }
+        
         if (!is_writable($this->logfile))
             return;
     
@@ -42,6 +50,14 @@ class EmonLogger
     }
 
     public function warn ($message){
+        if (!file_exists($this->logfile))
+        {
+            $fh = fopen($this->logfile,"a");
+            fclose($fh);
+            chgrp($this->logfile,"www-data");
+            chmod($this->logfile,0664);
+        }
+        
         if (!is_writable($this->logfile))
             return;
             
