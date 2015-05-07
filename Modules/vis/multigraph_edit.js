@@ -23,6 +23,7 @@ var multigraph_editmode = true;
 
 var movingtime = 0;
 
+load_events();
 /*
 
   Multigraph new and selector interface
@@ -31,8 +32,6 @@ var movingtime = 0;
 
 function multigraphGUI()
 {
-  load_events();
-
   $("#viewbtn").hide();
   var multigraphs = multigraph.getlist();
   // console.log("Multigraphs = ", multigraphs);
