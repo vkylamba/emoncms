@@ -10,6 +10,7 @@
 var multigraph_id = 0;
 var multigraph_feedlist = [];
 var multigraph_name='';
+var events_loaded = false;
 
 var timeWindow = (3600000*24.0*7);				            // Initial time window
 
@@ -23,7 +24,6 @@ var multigraph_editmode = true;
 
 var movingtime = 0;
 
-load_events();
 /*
 
   Multigraph new and selector interface
@@ -32,6 +32,10 @@ load_events();
 
 function multigraphGUI()
 {
+  if (!events_loaded) {
+      load_events();
+      events_loaded = true;
+  }
   $("#viewbtn").hide();
   var multigraphs = multigraph.getlist();
   // console.log("Multigraphs = ", multigraphs);
