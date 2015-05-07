@@ -7,8 +7,6 @@
     var plotlist = [];
     for (z in multigraph_feedlist)
     {
-    if (multigraph_feedlist[z]['datatype']==1)
-    {
       plotlist[z] = {
         id: multigraph_feedlist[z]['id'],
         selected: 1,
@@ -23,29 +21,6 @@
           }
         }
       };
-    }
-
-    else if (multigraph_feedlist[z]['datatype']==2)
-    {
-      plotlist[z] = {
-        id: multigraph_feedlist[z]['id'],
-        selected: 1,
-        plot:
-        {
-          data: null,
-          label: multigraph_feedlist[z]['name'],
-          bars:
-          {
-            show: true,
-            align: "left", barWidth: 3600*24*1000, fill: multigraph_feedlist[z]['fill']
-          }
-        }
-      };
-    }
-    else
-    {
-      console.log("ERROR: Unknown plot datatype! Datatype: ", multigraph_feedlist[z]['datatype']);
-    }
 
     if (multigraph_feedlist[z]['left']==true)
     {

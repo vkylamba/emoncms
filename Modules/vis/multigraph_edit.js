@@ -107,12 +107,8 @@ function draw_multigraph_feedlist_editor()
   }
 
   out += "<tr><td><select id='feedselect' style='width:220px;'>";
-  for (z in feedlist)
-  {
-    if (feedlist[z]['datatype']==1 || feedlist[z]['datatype']==2)
-    {
+  for (z in feedlist) {
       out += "<option value='"+feedlist[z]['id']+"' >"+feedlist[z]['name']+"</options>";
-    }
   }
   out += "</select></td>";
   out += "<td></td>";
@@ -141,14 +137,6 @@ function get_feed_name(id)
   for (z in feedlist)
   {
     if (feedlist[z]['id'] == id) return feedlist[z]['name'];
-  }
-}
-
-function get_feed_datatype(id)
-{
-  for (z in feedlist)
-  {
-    if (feedlist[z]['id'] == id) return feedlist[z]['datatype'];
   }
 }
 
@@ -181,7 +169,7 @@ function load_events()
 
   $(baseElement).on("click","#add",function(event){
     var feedid = $("#feedselect").val();
-    multigraph_feedlist.push({'id':feedid,'name':get_feed_name(feedid),'datatype':get_feed_datatype(feedid),'left':false,'right':false,'fill':false });
+    multigraph_feedlist.push({'id':feedid,'name':get_feed_name(feedid),'left':false,'right':false,'fill':false });
     draw_multigraph_feedlist_editor();
   });
 
