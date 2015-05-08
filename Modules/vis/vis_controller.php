@@ -85,7 +85,7 @@
                                   if ($f['public']) $array['valid'] = true;
                                 } else {
                                   $array['valid'] = false;
-                                  $array['error'] = "Please select a feed"
+                                  $array['error'] = "Please select a feed";
                                 }
                             }
 
