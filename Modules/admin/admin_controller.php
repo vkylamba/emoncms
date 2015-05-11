@@ -62,6 +62,22 @@ function admin_controller()
             $_SESSION['userid'] = intval(get('id'));
             header("Location: ../user/view");
         }
+        
+        if ($route->action == 'emonpiupdate' && $session['write'] && $session['admin']) { 
+            $route->format = "text";
+            $fh = fopen("/tmp/emonpiupdate","w");
+            fclose($fh);
+            $nextcroncall = 60 - (time() % 60);
+            $result = "/tmp/emonpiupdate file flag created, update will run on next cron call in: ".$nextcroncall."s\n";
+            $result .= "You can view the update logfile here /var/log/emonpiupdate.log\n";
+        }
+        
+        if ($route->action == 'getemonpiupdatelog' && $session['write'] && $session['admin']) { 
+            $route->format = "text";
+            ob_start();
+            passthru("tail /var/log/emonpiupdate.log -n 30");
+            $result = trim(ob_get_clean());
+        }
     }
 
     return array('content'=>$result);
