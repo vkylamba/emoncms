@@ -75,7 +75,7 @@ function admin_controller()
         if ($route->action == 'getemonpiupdatelog' && $session['write'] && $session['admin']) { 
             $route->format = "text";
             ob_start();
-            passthru("tail /var/log/emonpiupdate.log -n 30");
+            passthru("tail /var/log/emonpiupdate.log -n 40");
             $result = trim(ob_get_clean());
         }
     }
