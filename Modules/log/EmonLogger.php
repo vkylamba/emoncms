@@ -43,7 +43,8 @@ class EmonLogger
         if (!is_writable($this->logfile))
             return;
  
-         // Clear log file if more than 1MB (temporary solution)
+        clearstatcache($this->logfile); 
+        // Clear log file if more than 1MB (temporary solution)
         if (filesize($this->logfile)>(1024*1024)) {
             $fh = fopen($this->logfile,"w");
             fclose($fh);
@@ -67,6 +68,7 @@ class EmonLogger
         if (!is_writable($this->logfile))
             return;
         
+        clearstatcache($this->logfile);
         // Clear log file if more than 1MB (temporary solution)
         if (filesize($this->logfile)>(1024*1024)) {
             $fh = fopen($this->logfile,"w");
