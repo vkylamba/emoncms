@@ -39,9 +39,15 @@ class EmonLogger
             chgrp($this->logfile,"www-data");
             chmod($this->logfile,0664);
         }
-        
+ 
         if (!is_writable($this->logfile))
             return;
+ 
+         // Clear log file if more than 1MB (temporary solution)
+        if (filesize($this->logfile)>(1024*1024)) {
+            $fh = fopen($this->logfile,"w");
+            fclose($fh);
+        }
     
         if ($fh = fopen($this->logfile,"a")) {
             fwrite($fh,date("Y-n-j H:i:s", time())." $this->topic INFO ".$message."\n");
@@ -60,6 +66,12 @@ class EmonLogger
         
         if (!is_writable($this->logfile))
             return;
+        
+        // Clear log file if more than 1MB (temporary solution)
+        if (filesize($this->logfile)>(1024*1024)) {
+            $fh = fopen($this->logfile,"w");
+            fclose($fh);
+        }
             
         if ($fh = fopen($this->logfile,"a")) {
             fwrite($fh,date("Y-n-j H:i:s", time())." $this->topic WARN ".$message."\n");
