@@ -26,12 +26,12 @@
     <tr>
         <td>
             <h3><?php echo _('Update EmonPi'); ?></h3>
-            <p><?php echo _('Downloads latest changes from github and runs emonpi update script'); ?></p>
-            <p>View last 30 lines from /var/log/emonpiupdate.log <a href="<?php echo $path; ?>admin/getemonpiupdatelog">here</a></p>
+            <p><?php echo _('Downloads latest changes from Github and runs emonPi update script'); ?></p>
+            <p>View the update logfile (/var/log/emonpiupdate.log) <a href="<?php echo $path; ?>admin/getemonpiupdatelog">here</a></p>
             <div class="alert alert-info" id="emonpiupdatereply" style="display:none"></div>
         </td>
         <td><br>
-            <button id="emonpiupdate" class="btn btn-info"><?php echo _('Update EmonPi'); ?></button>
+            <button id="emonpiupdate" class="btn btn-info"><?php echo _('Update emonPi'); ?></button>
         </td>
     </tr>
 </table>
