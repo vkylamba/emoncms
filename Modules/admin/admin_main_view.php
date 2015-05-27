@@ -25,7 +25,7 @@
     </tr>
     <tr>
         <td>
-            <h3><?php echo _('Update EmonPi'); ?></h3>
+            <h3><?php echo _('Update emonPi'); ?></h3>
             <p><?php echo _('Downloads latest changes from Github and runs emonPi update script'); ?></p>
             <p>View the update logfile (/var/log/emonpiupdate.log) <a href="<?php echo $path; ?>admin/getemonpiupdatelog">here</a></p>
             <div class="alert alert-info" id="emonpiupdatereply" style="display:none"></div>
