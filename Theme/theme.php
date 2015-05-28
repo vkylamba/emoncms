@@ -20,7 +20,7 @@
         <title>Emoncms</title>
 
         <!-- Thanks to Baptiste Gaultier for the emoncms dial icon http://bit.ly/zXgScz -->
-        <link rel="shortcut icon" href="<?php echo $path; ?>Theme/favicon.png" />
+        <link rel="shortcut icon" href="<?php echo $path; ?>Theme/favicon-low-write.png" />
         <!-- APPLE TWEAKS - thanks to Paul Dreed -->
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -39,7 +39,7 @@
             <div class="navbar-inner">
                 <div class="container">
                     <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <img src="<?php echo $path; ?>Theme/favicon.png" style="width:28px;"/>
+                        <img src="<?php echo $path; ?>Theme/favicon-low-write.png" style="width:28px;"/>
                     </button>
                     <div class="nav-collapse collapse">
                       <?php if (!isset($runmenu)) $runmenu = '';
