@@ -38,7 +38,7 @@
                         <ul class="dropdown-menu">
                         <?php foreach ($item['dropdown'] as $dropdownitem) { ?>
                             <li>
-                                <a href="<?php echo $path.$dropdownitem[1]; ?>">
+                                <a href="<?php echo $path.$dropdownitem[1]; ?>" data-toggle="collapse" data-target=".nav-collapse">
                                 <?php echo $dropdownitem[0]; ?>
                                 </a>
                             </li>
