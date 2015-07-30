@@ -67,7 +67,7 @@ function feed_controller()
                 if ($f['public'] || ($session['userid']>0 && $f['userid']==$session['userid'] && $session['read']))
                 {
                     if ($route->action == "value") $result = $feed->get_value($feedid);
-                    if ($route->action == "timevalue") $result = $feed->get_timevalue_seconds($feedid);
+                    if ($route->action == "timevalue") $result = $feed->get_timevalue($feedid);
                     if ($route->action == "get") $result = $feed->get_field($feedid,get('field')); // '/[^\w\s-]/'
                     if ($route->action == "aget") $result = $feed->get($feedid);
 

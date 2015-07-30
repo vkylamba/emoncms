@@ -69,13 +69,12 @@ function admin_controller()
             fclose($fh);
             $nextcroncall = 60 - (time() % 60);
             $result = "/tmp/emonpiupdate file flag created, update will run on next cron call in: ".$nextcroncall."s\n";
-            $result .= "You can view the update logfile here /var/log/emonpiupdate.log\n";
         }
         
         if ($route->action == 'getemonpiupdatelog' && $session['write'] && $session['admin']) { 
             $route->format = "text";
             ob_start();
-            passthru("tail /var/log/emonpiupdate.log -n 40");
+            passthru("cat /var/log/emonpiupdate.log");
             $result = trim(ob_get_clean());
         }
     }
