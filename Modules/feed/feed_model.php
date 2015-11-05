@@ -55,7 +55,7 @@ class Feed
         $engine = (int) $engine;
         
         if ($engine!=Engine::PHPFINA && $engine!=Engine::PHPTIMESERIES)
-            return array('success'=>false, 'message'=>'incorrect engine given, must be 5 or 6');
+            return array('success'=>false, 'message'=>'incorrect engine given, must be 5:PHPFINA or 2:PHPTIMESERIES');
         
         // If feed of given name by the user already exists
         $feedid = $this->get_id($userid,$name);
