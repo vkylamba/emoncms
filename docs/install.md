@@ -12,7 +12,7 @@ The build uses the latest version of [EmonHub](https://github.com/emonhub/) to p
 
 The writer process writes the feed data to disk step periodically. The writing step involves first reading all the items out of the redis queue placing the individual feed datapoints into individual buffers which are again in memory. Then at the end of this process each block of data accumulated for each feed is written to the disk in a single write operation (per feed)
 
-### Raspbian
+### Raspbian 
 
 Download the official raspberrpi raspbian image and write to the SD card.
 
