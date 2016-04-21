@@ -16,6 +16,11 @@
     $menu_left = $menu['left'];
     $menu_right = $menu['right'];
     $menu_dropdown = $menu['dropdown'];
+    $menu_dropdown_config = $menu['dropdownconfig'];
+    
+    foreach ($menu_dropdown_config as $menu_dropdown_config_item) {
+        $menu_dropdown[] = $menu_dropdown_config_item;
+    }
 
     if (!$session['write']) $menu_right[] = array('name'=>"Log In", 'path'=>"user/login", 'order' => -1 );
 ?>
