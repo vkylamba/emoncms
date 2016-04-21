@@ -36,10 +36,24 @@
                             <?php echo $item['name']; ?> <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                        <?php foreach ($item['dropdown'] as $dropdownitem) { ?>
+                        <?php 
+                        
+                        foreach ($item['dropdown'] as $dropdownitem) { 
+                            if (isset($dropdownitem[0])) {
+                                $name = $dropdownitem[0]; 
+                            } else {
+                                $name = $dropdownitem['name'];
+                            }
+                            
+                            if (isset($dropdownitem[1])) {
+                                $linkpath = $dropdownitem[1]; 
+                            } else {
+                                $linkpath = $dropdownitem['path'];
+                            }
+                        ?>
                             <li>
-                                <a href="<?php echo $path.$dropdownitem[1]; ?>" data-toggle="collapse" data-target=".nav-collapse">
-                                <?php echo $dropdownitem[0]; ?>
+                                <a href="<?php echo $path.$linkpath; ?>" data-toggle="collapse" data-target=".nav-collapse">
+                                <?php echo $name; ?>
                                 </a>
                             </li>
                         <?php } ?>
