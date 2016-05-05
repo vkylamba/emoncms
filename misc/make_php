@@ -2,7 +2,7 @@
 
 function install_php() {
 	
-	pushd ${OPENSHIFT_DIY_DIR}
+	pushd ${OPENSHIFT_DATA_DIR}
 	rm -f php-${DIST_PHP_VER}.tar.gz
 
     if [ -d php-${DIST_PHP_VER} ]; then
