@@ -2,8 +2,8 @@
 
 OPENSHIFT_RUNTIME_DIR=${OPENSHIFT_HOMEDIR}/app-root/runtime
 
-LOG_FILE=/tmp/build_log
-PID_FILE=/tmp/build_pid
+LOG_FILE=${OPENSHIFT_LOG_DIR}build_log
+PID_FILE=${OPENSHIFT_LOG_DIR}build_pid
 
 PID=` 2>/dev/null cat ${PID_FILE} `
 
