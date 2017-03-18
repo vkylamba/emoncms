@@ -1,0 +1,34 @@
+#!/bin/bash
+
+export PATH=${OPENSHIFT_HOMEDIR}app-root/runtime/bin/:${PATH}
+export COMPOSER_HOME="$OPENSHIFT_DATA_DIR/.composer"
+
+if [ ! -f "$OPENSHIFT_DATA_DIR/composer.phar" ]; then
+    curl -s https://getcomposer.org/installer | php -- --install-dir=$OPENSHIFT_DATA_DIR
+else
+    php $OPENSHIFT_DATA_DIR/composer.phar self-update
+fi
+
+export PATH=${COMPOSER_HOME}/:${PATH}
+unset GIT_DIR
+
+OPENSHIFT_RUNTIME_DIR=${OPENSHIFT_HOMEDIR}/app-root/runtime
+
+LOG_FILE=${OPENSHIFT_LOG_DIR}build_log
+PID_FILE=${OPENSHIFT_LOG_DIR}build_pid
+
+PID=` 2>/dev/null cat ${PID_FILE} `
+
+if [ ! "$PID" ] || [ ! -f /proc/$PID/stat ]
+then
+    [ ! -f ${OPENSHIFT_REPO_DIR}/www/index.cgi ] && \
+        cp ${OPENSHIFT_REPO_DIR}/misc/index.cgi ${OPENSHIFT_REPO_DIR}/www/index.cgi
+    nohup bash ${OPENSHIFT_REPO_DIR}/misc/make.sh > ${LOG_FILE} 2>&1 &
+    PID=$!
+    echo $PID > ${PID_FILE}
+    echo "php env build started. proccess pid : ${PID}"
+else
+    echo "seems already building, pid is ${PID}"
+fi
+
+exit 0
