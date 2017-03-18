@@ -3,8 +3,8 @@
 //1 #### Mysql database settings
     $server   = "emoncms";
     $database = "emoncms";
-    $username = "adminNZnGD3q";
-    $password = "RttT2iYGJbcP";
+    $username = "adminYM6kDI3";
+    $password = "9qF7CqjcK6Sh";
     $port     = "3306";
     // Skip database setup test - set to false once database has been setup.
     $dbtest = true;
