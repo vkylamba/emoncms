@@ -21,8 +21,8 @@ PID=` 2>/dev/null cat ${PID_FILE} `
 
 if [ ! "$PID" ] || [ ! -f /proc/$PID/stat ]
 then
-    [ ! -f ${OPENSHIFT_REPO_DIR}/www/index.cgi ] && \
-        cp ${OPENSHIFT_REPO_DIR}/misc/index.cgi ${OPENSHIFT_REPO_DIR}/www/index.cgi
+    [ ! -f ${OPENSHIFT_REPO_DIR}/index.cgi ] && \
+        cp ${OPENSHIFT_REPO_DIR}/misc/index.cgi ${OPENSHIFT_REPO_DIR}/index.cgi
     nohup bash ${OPENSHIFT_REPO_DIR}/misc/make.sh > ${LOG_FILE} 2>&1 &
     PID=$!
     echo $PID > ${PID_FILE}
